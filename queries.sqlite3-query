@@ -1,0 +1,28 @@
+-- database: ./database.db
+
+SELECT * FROM Bikes;
+
+INSERT INTO Bikes (Model, TopSpeed, Cost, Description) VALUES ('R15', 145, 5500, 'The Yamaha R15 is a popular sportbike in Asian markets, known for its sharp handling and fuel efficiency.');
+INSERT INTO Bikes (Model, TopSpeed, Cost, Description) VALUES ('XSR700', 125, 9000, 'The Yamaha XSR700 is a retro-styled scrambler with a powerful parallel-twin engine and modern features.');
+INSERT INTO Bikes (Model, TopSpeed, Cost, Description) VALUES ('FJR1300', 155, 18000, 'The Yamaha FJR1300 is a sport-touring motorcycle known for its powerful engine, comfortable ride, and advanced technology.');
+INSERT INTO Bikes (Model, TopSpeed, Cost, Description) VALUES ('GSX-S1000', 160, 12000, 'The Suzuki GSX-S1000 is a powerful naked sportbike with an inline-four engine and aggressive styling.');
+INSERT INTO Bikes (Model, TopSpeed, Cost, Description) VALUES ('V-Strom 1050', 130, 15000, 'The Suzuki V-Strom 1050 is an adventure touring motorcycle with a powerful V-twin engine and long-travel suspension.');
+INSERT INTO Bikes (Model, TopSpeed, Cost, Description) VALUES ('GSX250R', 125, 4500, 'The Suzuki GSX250R is an entry-level sportbike with a fuel-efficient single-cylinder engine and a comfortable riding position.');
+INSERT INTO Bikes (Model, TopSpeed, Cost, Description) VALUES ('CBR650R', 130, 8500, 'The Honda CBR650R is a sportbike with a smooth and powerful inline-four engine, suitable for both commuting and weekend rides.');
+INSERT INTO Bikes (Model, TopSpeed, Cost, Description) VALUES ('CTX700', 110, 8000, 'The Honda CTX700 is a comfortable and stylish cruiser with a unique parallel-twin engine and a low seat height.');
+INSERT INTO Bikes (Model, TopSpeed, Cost, Description) VALUES ('PCX160', 80, 4000, 'The Honda PCX160 is a popular scooter with a fuel-efficient engine, ample storage space, and a comfortable ride.');
+INSERT INTO Bikes (Model, TopSpeed, Cost, Description) VALUES ('Niken', 100, 17000, 'The Yamaha Niken is a unique three-wheeled motorcycle with two front wheels for increased stability and cornering grip.');
+INSERT INTO Bikes (Model, TopSpeed, Cost, Description) VALUES ('GSX-R750', 170, 13000, 'The Suzuki GSX-R750 is a legendary middleweight sportbike known for its high-revving engine and agile handling.');
+INSERT INTO Bikes (Model, TopSpeed, Cost, Description) VALUES ('CB1000R', 145, 11000, 'The Honda CB1000R is a neo-sports cafe racer with a powerful inline-four engine and a distinctive retro-modern design.');
+
+
+-- All bikes
+SELECT * FROM Bikes;
+-- all bikes and the maker
+SELECT Makers.Name,Bikes.Model FROM Bikes
+JOIN Makers ON Makers.MakerID=Bikes.MakerID;
+
+--bikes of one make
+SELECT Bikes.Model FROM Bikes
+JOIN Makers ON Makers.MakerID=Bikes.MakerID
+WHERE Makers.Name="Yamaha";
